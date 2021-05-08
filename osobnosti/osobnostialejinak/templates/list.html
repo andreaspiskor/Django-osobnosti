@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Přehled osobností{% endblock %}
+
+{% block content %}
+    <hr>
+    {% for osobnosti in osobnosti_list %}
+        <div class="row">
+            <div class="col-sm-4 text-center">
+                <p><img src="{{ osobnosti.foto.url }}" alt="{{ osobnosti.prijmeni }}" width="50%"></p>
+            </div>
+            <div class="col-sm-8">
+                <h3><a href="{% url 'detail' osobnosti.pk %}">{{ osobnosti.jmeno }} {{ osobnosti.prijmeni }}</a></h3>
+                <hr>
+                <p><b>Druh:</b> {{ osobnosti.druh.oblast }} {{ osobnosti.druh.oznaceni_druh }}</p>
+            </div>
+            </div>
+        </div>
+        <hr>
+    {% endfor %}
+{% endblock %}

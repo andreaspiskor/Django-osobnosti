@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Detail hry{% endblock %}
+
+{% block content %}
+    <hr>
+    <h2 class="text-center">{{osobnosti.jmeno}} {{osobnosti.prijmeni}}</h2>
+    <hr>
+    <div class="row">
+        <div class="col text-center">
+            <p><img src="{{ osobnosti.foto.url }}" alt="{{ osobnosti.prijmeni }}" width="75%"></p>
+        </div>
+        <div class="col">
+            <p><b>Druh:</b> {{ osobnosti.druh.oblast }} {{ osobnosti.druh.oznaceni_druh }}</p>
+            <hr>
+            <p><b>Popis:</b> {{ osobnosti.popis }}</p>
+        </div>
+    </div>
+{% endblock %}
